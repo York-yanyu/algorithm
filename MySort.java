@@ -4,7 +4,7 @@ public class MySort {
 	
 	
 	public static void SelectionSort(int[] a){
-		// Ñ¡ÔñÅÅĞò
+		// é€‰æ‹©æ’åº
 		int index = 0;
 		if((a == null)||(a.length == 0))
 		{
@@ -27,7 +27,7 @@ public class MySort {
 	
 	
 	public static void InsertionSort(int[] a){
-		//²åÈëÅÅĞò
+		//æ’å…¥æ’åº
 		if((a == null)||(a.length < 2))
 		{
 			return;
@@ -50,7 +50,7 @@ public class MySort {
 	}
 	
 	public static void BubbleSort(int[] a){
-		// Ã°ÅİÅÅĞò
+		// å†’æ³¡æ’åº
 		if((a == null)||(a.length < 2))
 		{
 			return;
@@ -68,7 +68,7 @@ public class MySort {
 	}
 	
 	public static void QuickSort(int[] a, int p, int q){
-		// ¿ìËÙÅÅĞò
+		// å¿«é€Ÿæ’åº
 		if(p<q)
 		{
 			int r = Partion(a, p, q);
@@ -79,10 +79,10 @@ public class MySort {
 	
 
 	public static int Partion(int[] a, int p, int q){
-		// ×î»ù´¡µÄ¿ìÅÅÓÃµÚÒ»¸öÔªËØ×÷Îªpivot
-		// ¿ÉÒÔËæ»ú»¯Ñ¡Ôñpivot£¬·½·¨Ò²ºÜ¼òµ¥
+		// æœ€åŸºç¡€çš„å¿«æ’ç”¨ç¬¬ä¸€ä¸ªå…ƒç´ ä½œä¸ºpivot
+		// å¯ä»¥éšæœºåŒ–é€‰æ‹©pivotï¼Œæ–¹æ³•ä¹Ÿå¾ˆç®€å•
 		Random y = new Random();
-		int pivot = y.nextInt(q-p+1)+p;//Ëæ»úÕÒÖ÷Ôª
+		int pivot = y.nextInt(q-p+1)+p;//éšæœºæ‰¾ä¸»å…ƒ
 		Swap(a, p, pivot);		
 		int x = a[p];
 		int i = p;
@@ -100,7 +100,7 @@ public class MySort {
 	}
 	
 	public static void Swap(int[] a, int b, int c){
-		// ½»»»Êı×éÖĞÁ½¸öÖµµÄÎ»ÖÃ
+		// äº¤æ¢æ•°ç»„ä¸­ä¸¤ä¸ªå€¼çš„ä½ç½®
 		int temp;
 		temp = a[b];
 		a[b] = a[c];
@@ -108,12 +108,12 @@ public class MySort {
 	}
 	
 	public static void MergeSort(int[] a){
-		//¹é²¢ÅÅĞò
+		//å½’å¹¶æ’åº
 		int[] temp = new int[a.length];
 		Sort(a, 0, a.length-1, temp);
 	}
 	public static void Sort(int[] a, int left, int right, int[] temp){
-		//¹é²¢ÅÅĞòÖĞµÄÅÅĞò
+		//å½’å¹¶æ’åºä¸­çš„æ’åº
 		if(left<right)
 		{
 			int mid = (left+right)/2;
@@ -123,7 +123,7 @@ public class MySort {
 		}
 	}
 	public static void Merge(int[] a, int left, int mid, int right, int[] temp){
-		//¹é²¢ÅÅĞòÖĞµÄ¹é²¢
+		//å½’å¹¶æ’åºä¸­çš„å½’å¹¶
 		int i = left;
 		int j = mid+1;
 		int t = 0;
@@ -149,7 +149,7 @@ public class MySort {
 		t=0;
 		while(left<=right)
 		{
-			//×¢Òâ´Ë´¦Ñ­»·µÄÌõ¼ş£¬ÕâÀïµÄtempÖ»ÊÇÁÙÊ±µÄÊı×é£¬²¢²»ÊÇËùÓĞµÄÊı
+			//æ³¨æ„æ­¤å¤„å¾ªç¯çš„æ¡ä»¶ï¼Œè¿™é‡Œçš„tempåªæ˜¯ä¸´æ—¶çš„æ•°ç»„ï¼Œå¹¶ä¸æ˜¯æ‰€æœ‰çš„æ•°
 			a[left++]=temp[t++];
 		}
 	}
@@ -157,7 +157,7 @@ public class MySort {
 	
 	
 	public static void HeapSort(int[] a){
-		//¶ÑÅÅĞò£¬¹Ø¼üÊÇ½¨Á¢¶Ñ
+		//å †æ’åºï¼Œå…³é”®æ˜¯å»ºç«‹å †
 		if((a == null)||(a.length < 2))
 		{
 			return;
@@ -170,8 +170,8 @@ public class MySort {
 			
 	}
 	public static void BuildHeap(int[] a, int length){
-		//µ÷Õû¶Ñ
-		for(int i=(length-1)/2-1; i>=0; i--)
+		//è°ƒæ•´å †
+		for(int i=(length)/2-1; i>=0; i--)
 		{
 			if(2*i+2>=length)
 			{
@@ -181,7 +181,7 @@ public class MySort {
 			else
 			{
 				if(a[i]<a[2*i+1])
-					Swap(a, i, 2*i+1);//ÕâÀïÎªÊ²Ã´ÒªÏÈºÍ×ó½áµã±È½Ï
+					Swap(a, i, 2*i+1);//è¿™é‡Œä¸ºä»€ä¹ˆè¦å…ˆå’Œå·¦ç»“ç‚¹æ¯”è¾ƒ
 				if(a[i]<a[2*i+2])
 					Swap(a, i, 2*i+2);
 			}
